@@ -1,0 +1,37 @@
+{
+  "name": "mailer",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "start:devnpmlocal": "tsc-watch -p tsconfig.build.json --onSuccess \"node -r dotenv/config dist/main.js dotenv_config_path=../.env.npmlocal\"",
+    "start:dev": "tsc-watch -p tsconfig.build.json --onSuccess \"node -r dotenv/config dist/main.js dotenv_config_path=../.env\"",
+    "start:test": "tsc-watch -p tsconfig.build.json --onSuccess \"node -r dotenv/config dist/main.js dotenv_config_path=../.env.test\"",
+    "start:prod": "node dist/main.js",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
+  },
+  "dependencies": {
+    "@nest-modules/mailer": "1.3.22",
+    "@nestjs/common": "7.4.2",
+    "@nestjs/core": "7.4.2",
+    "@nestjs/microservices": "7.4.2",
+    "@nestjs/platform-express": "7.4.2",
+    "nodemailer": "^6.4.11",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "rxjs": "6.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.7",
+    "@types/node": "14.0.27",
+    "@types/nodemailer": "^6.4.0",
+    "dotenv": "8.2.0",
+    "ts-node": "8.10.2",
+    "tsc-watch": "4.2.9",
+    "tsconfig-paths": "3.9.0",
+    "tslint": "6.1.3",
+    "typescript": "3.9.7"
+  }
+}
